@@ -1,0 +1,19 @@
+site:
+  title: Alpine Linux Documentation
+  start_page: user-handbook::index.adoc
+
+content:
+  sources:
+  - url: workspace/user-handbook
+    branches: HEAD
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+
+output:
+  destinations:
+  - provider: archive
+    path: ./public.zip
+  - provider: fs

@@ -1,0 +1,34 @@
+= Alpine Documentation
+Chloe Kudryavtsev <toast@toastin.space>
+
+This is the Antora playbook for the Alpine Documentation.
+
+== Deploying
+
+This repository is all you need to deploy the documentation.
+You should clone this, and then run `antora generate [ARGS] playbook.yml`, where "playbook.yml" is the appropriate playbook.
+Here are the available playbooks:
+
+site.yml:: Production playbook - use this if you're deploying this externally.
+site-workspace.yml::
+Author mode playbook - use this if you're working on the documentation.
+This expects checkouts (or symlinks) to the components to be under `workspace/`.
+It will also generate a `./public.zip`, which is how the snapshots are created.
+
+Args of particular interest are:
+
+`--cache-dir`:: Puts the cache into a specified directory - since the default is under home, you may want to set this to, for example, `build/cache`.
+`--clean`:: Cleans up the target directory before building.
+`--pull`:: Force checking for upstream updates (components, ui, etc).
+`--to-dir`:: Determines where the results are put - defaults to `build/site`, you may want to use `public`.
+`--url`:: Sets the base url, which allows generating 404 and similar directories - do not add a trailing `/` - example: `https://docs.alpinelinux.org`.
+
+Thus, a production deployment to https://docs.alpinelinux.org would look like so: `antora --cache-dir build/cache --clean --url https://docs.alpinelinux.org site.yml`, and the web server would be pointed at `$PWD/build/site`.
+
+== Contributing
+
+There are few reasons to contribute to here - this is just the glue between actual content.
+You are likely interested in contributing to one of the Antora components, referenced here.
+In the scenario there is something specific to contribute anyway, please make sure your name is in the authors list.
+Do also note that by contributing a patch, assuming you have not done so yet, you are agreeing to license your patch (and all future ones) under the license of the repository.
+You will be explicitly asked to confirm that in whatever medium you submit that patch (or you may confirm this in your patch commit message).
