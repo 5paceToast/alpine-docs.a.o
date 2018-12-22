@@ -4,7 +4,7 @@ site:
 
 content:
   sources:
-  - url: https://github.com/5paceToast/alpine-user-handbook.git
+  - url: git://git.alpinelinux.org/docs/user-handbook.git
     branches: [ master ]
 
 ui:
