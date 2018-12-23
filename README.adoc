@@ -2,6 +2,7 @@
 Chloe Kudryavtsev <toast@toastin.space>
 
 This is the Antora playbook for the Alpine Documentation.
+NOTE: It has been moved over to [Alpine's Git Servers](https://git.alpinelinux.org/cgit/docs/docs.a.o/). This repository is thus unmaintained.
 
 == Deploying
 
